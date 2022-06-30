@@ -35,6 +35,10 @@
   --client-border-accent: 1px solid #2196f3;
 
   --footer-background-social: rgb(255 255 255 / 0.1);
+
+  /* Grid setting */
+  --project-items: 2;
+  --project-indent: 30px;
 }
 
 /* Global Styles */
@@ -58,15 +62,22 @@ p {
   margin: 0;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .link {
   text-decoration: none;
   font-style: normal;
 }
 
 .list {
-  list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .section {
@@ -76,6 +87,10 @@ p {
   margin: 0 auto;
 
   /* outline: 2px solid tomato; */
+}
+
+.icon {
+  fill: currentColor;
 }
 
 .visually-hidden {
@@ -150,26 +165,6 @@ p {
   color: var(--desc-font-color);
 }
 
-.contact-icon {
-  width: 16px;
-  height: 16px;
-  fill: currentColor;
-}
-
-/* .contact-mail::before {
-  content: '';
-  width: 16px;
-  height: 12px;
-  background-image: url('../images/mail.svg');
-}
-
-.contact-tel::before {
-  content: '';
-  width: 10px;
-  height: 16px;
-  background-image: url('../images/tel.svg');
-} */
-
 .navigation-link:hover,
 .navigation-link:focus,
 .contact-link:hover,
@@ -179,7 +174,6 @@ p {
 
 .navigation-list,
 .contact-list {
-  display: flex;
   gap: 50px;
 }
 
@@ -247,7 +241,6 @@ p {
 /* Features Styles */
 
 .features-list {
-  display: flex;
   gap: 30px;
 }
 
@@ -261,49 +254,6 @@ p {
   background-color: var(--background-section-color);
   border-radius: 4px;
 }
-
-.feature-icon {
-  display: block;
-  margin: 0 auto;
-  width: 70px;
-  height: 70px;
-}
-
-/* .features-item::before {
-  content: '';
-  display: block;
-  height: 120px;
-  margin-bottom: 30px;
-  background-color: var(--background-section-color);
-}
-
-.features-icon-antenna::before {
-  background-image: url('../images/antenna.svg');
-  background-size: 70px 70px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.features-icon-clock::before {
-  background-image: url('../images/clock.svg');
-  background-size: 70px 70px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.features-icon-diagram::before {
-  background-image: url('../images/diagram.svg');
-  background-size: 70px 70px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.features-icon-astronaut::before {
-  background-image: url('../images/astronaut.svg');
-  background-size: 70px 70px;
-  background-repeat: no-repeat;
-  background-position: center;
-} */
 
 .features-subtitle {
   font-size: 14px;
@@ -327,12 +277,7 @@ p {
 }
 
 .product-list {
-  display: flex;
   gap: 30px;
-}
-
-.product-img {
-  display: block;
 }
 
 /* Team Styles */
@@ -346,7 +291,6 @@ p {
 }
 
 .team-list {
-  display: flex;
   gap: 30px;
 }
 
@@ -357,10 +301,6 @@ p {
 
   box-shadow: var(--team-box-shadow);
   border-radius: var(--team-border-radius);
-}
-
-.team-img {
-  display: block;
 }
 
 .team-wrapper {
@@ -386,7 +326,6 @@ p {
 /* Social Link Styles */
 
 .social-list {
-  display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 16px;
@@ -408,16 +347,9 @@ p {
   background-color: var(--btn-background-color);
 }
 
-.social-icon {
-  fill: currentColor;
-  width: 20px;
-  height: 20px;
-}
-
 /* Client Styles */
 
 .client-list {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
@@ -441,12 +373,6 @@ p {
   border: var(--client-border-accent);
 }
 
-.client-icon {
-  fill: currentColor;
-  width: 106px;
-  height: 60px;
-}
-
 /* Footer Styles + features-desc */
 
 .footer {
@@ -461,8 +387,16 @@ p {
   gap: 85px;
 }
 
+.address-container {
+  flex-basis: 216px;
+}
+
 .address {
   margin-top: 20px;
+}
+
+.address-list {
+  display: block;
 }
 
 .features-desc,
@@ -511,7 +445,6 @@ p {
 /* Portfolio Styles */
 
 .filter-list {
-  display: flex;
   justify-content: center;
   gap: 8px;
   margin-bottom: 50px;
@@ -541,21 +474,21 @@ p {
 }
 
 .project-list {
-  display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: var(--project-indent);
 }
 
 .project-item {
   max-width: 370px;
 }
 
-.project-item:hover {
-  box-shadow: var(--project-item-box-shadow);
+.project-link {
+  display: block;
 }
 
-.project-img {
-  display: block;
+.project-link:hover,
+.project-link:focus {
+  box-shadow: var(--project-item-box-shadow);
 }
 
 .project-wrapper {
