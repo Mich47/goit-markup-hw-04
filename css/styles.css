@@ -482,13 +482,9 @@ img {
   max-width: 370px;
 }
 
-.project-link {
-  display: block;
-}
-
-.project-link:hover,
-.project-link:focus {
+.project-item:hover {
   box-shadow: var(--project-item-box-shadow);
+  cursor: pointer;
 }
 
 .project-wrapper {
